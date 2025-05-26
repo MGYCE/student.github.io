@@ -1,26 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Register</title>
+  <meta charset="UTF-8">
+  <title>PVC Aadhaar Card Maker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+    .card-preview {
+      width: 340px;
+      height: 215px;
+      border: 1px solid #000;
+      background: white;
+      padding: 15px;
+      margin-top: 20px;
+      position: relative;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .govt-logo {
+      width: 60px;
+      float: left;
+    }
+    .aadhaar-logo {
+      width: 70px;
+      float: right;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .details {
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .photo {
+      width: 70px;
+      height: 85px;
+      border: 1px solid #000;
+      float: right;
+      margin-left: 10px;
+    }
+    .clear {
+      clear: both;
+    }
+    input[type="text"] {
+      width: 300px;
+      margin: 5px 0;
+    }
+  </style>
 </head>
 <body>
-    <h2>Registration Form</h2>
-    <form action="/register" method="POST">
-        <label for="username">Username:</label><br />
-        <input type="text" id="username" name="username" required /><br /><br />
 
-        <label for="email">Email:</label><br />
-        <input type="email" id="email" name="email" required /><br /><br />
+<h2>PVC Aadhaar Card Generator (Mockup)</h2>
+<form id="aadhaarForm">
+  <label>Name:</label><br>
+  <input type="text" id="name"><br>
+  <label>DOB (DD-MM-YYYY):</label><br>
+  <input type="text" id="dob"><br>
+  <label>Gender:</label><br>
+  <input type="text" id="gender"><br>
+  <label>Aadhaar Number:</label><br>
+  <input type="text" id="aadhaar"><br>
+  <label>Photo URL:</label><br>
+  <input type="text" id="photo"><br>
+  <button type="button" onclick="generateCard()">Generate Card</button>
+</form>
 
-        <label for="password">Password:</label><br />
-        <input type="password" id="password" name="password" required /><br /><br />
+<div class="card-preview" id="cardPreview" style="display:none;">
+  <div class="header">
+    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Emblem_of_India.svg/100px-Emblem_of_India.svg.png" class="govt-logo">
+    Government of India
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Aadhaar_Logo.svg/200px-Aadhaar_Logo.svg.png" class="aadhaar-logo">
+    <div class="clear"></div>
+  </div>
+  <div class="details">
+    <img id="photoPreview" class="photo">
+    <strong>Name:</strong> <span id="namePreview"></span><br>
+    <strong>DOB:</strong> <span id="dobPreview"></span><br>
+    <strong>Gender:</strong> <span id="genderPreview"></span><br>
+    <strong>Aadhaar No:</strong> <span id="aadhaarPreview"></span><br>
+  </div>
+</div>
 
-        <label for="confirm_password">Confirm Password:</label><br />
-        <input type="password" id="confirm_password" name="confirm_password" required /><br /><br />
+<script>
+  function generateCard() {
+    document.getElementById('namePreview').innerText = document.getElementById('name').value;
+    document.getElementById('dobPreview').innerText = document.getElementById('dob').value;
+    document.getElementById('genderPreview').innerText = document.getElementById('gender').value;
+    document.getElementById('aadhaarPreview').innerText = document.getElementById('aadhaar').value;
+    document.getElementById('photoPreview').src = document.getElementById('photo').value;
+    document.getElementById('cardPreview').style.display = 'block';
+  }
+</script>
 
-        <button type="submit">Register</button>
-    </form>
 </body>
 </html>
