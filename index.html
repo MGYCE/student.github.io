@@ -1,100 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>PVC Aadhaar Card Maker</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    .card-preview {
-      width: 340px;
-      height: 215px;
-      border: 1px solid #000;
-      background: white;
-      padding: 15px;
-      margin-top: 20px;
-      position: relative;
-      box-shadow: 0 0 5px rgba(0,0,0,0.2);
-    }
-    .govt-logo {
-      width: 60px;
-      float: left;
-    }
-    .aadhaar-logo {
-      width: 70px;
-      float: right;
-    }
-    .header {
-      text-align: center;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .details {
-      font-size: 14px;
-      line-height: 1.4;
-    }
-    .photo {
-      width: 70px;
-      height: 85px;
-      border: 1px solid #000;
-      float: right;
-      margin-left: 10px;
-    }
-    .clear {
-      clear: both;
-    }
-    input[type="text"] {
-      width: 300px;
-      margin: 5px 0;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Future Coaching Center</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #0077cc;
+            color: white;
+            padding: 15px 20px;
+            text-align: center;
+        }
+        nav {
+            background-color: #005fa3;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        section {
+            padding: 20px;
+        }
+        footer {
+            background-color: #003d66;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<h2>PVC Aadhaar Card Generator (Mockup)</h2>
-<form id="aadhaarForm">
-  <label>Name:</label><br>
-  <input type="text" id="name"><br>
-  <label>DOB (DD-MM-YYYY):</label><br>
-  <input type="text" id="dob"><br>
-  <label>Gender:</label><br>
-  <input type="text" id="gender"><br>
-  <label>Aadhaar Number:</label><br>
-  <input type="text" id="aadhaar"><br>
-  <label>Photo URL:</label><br>
-  <input type="text" id="photo"><br>
-  <button type="button" onclick="generateCard()">Generate Card</button>
-</form>
+<header>
+    <h1>Bright Future Coaching Center</h1>
+    <p>Your Success Starts Here!</p>
+</header>
 
-<div class="card-preview" id="cardPreview" style="display:none;">
-  <div class="header">
-    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2e/Emblem_of_India.svg/100px-Emblem_of_India.svg.png" class="govt-logo">
-    Government of India
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Aadhaar_Logo.svg/200px-Aadhaar_Logo.svg.png" class="aadhaar-logo">
-    <div class="clear"></div>
-  </div>
-  <div class="details">
-    <img id="photoPreview" class="photo">
-    <strong>Name:</strong> <span id="namePreview"></span><br>
-    <strong>DOB:</strong> <span id="dobPreview"></span><br>
-    <strong>Gender:</strong> <span id="genderPreview"></span><br>
-    <strong>Aadhaar No:</strong> <span id="aadhaarPreview"></span><br>
-  </div>
-</div>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-<script>
-  function generateCard() {
-    document.getElementById('namePreview').innerText = document.getElementById('name').value;
-    document.getElementById('dobPreview').innerText = document.getElementById('dob').value;
-    document.getElementById('genderPreview').innerText = document.getElementById('gender').value;
-    document.getElementById('aadhaarPreview').innerText = document.getElementById('aadhaar').value;
-    document.getElementById('photoPreview').src = document.getElementById('photo').value;
-    document.getElementById('cardPreview').style.display = 'block';
-  }
-</script>
+<section id="home">
+    <h2>Welcome to Bright Future</h2>
+    <p>We help students achieve academic excellence and reach their full potential.</p>
+</section>
+
+<section id="about">
+    <h2>About Us</h2>
+    <p>Bright Future Coaching Center has been providing quality education for over 10 years, specializing in school subjects, entrance exams, and career guidance.</p>
+</section>
+
+<section id="courses">
+    <h2>Our Courses</h2>
+    <ul>
+        <li>Mathematics (Grade 6–12)</li>
+        <li>Science (Physics, Chemistry, Biology)</li>
+        <li>NEET / JEE Preparation</li>
+        <li>Spoken English & Personality Development</li>
+    </ul>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@brightfuture.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 123 Education Lane, Knowledge City</p>
+</section>
+
+<footer>
+    <p>&copy; 2025 Bright Future Coaching Center. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
